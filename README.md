@@ -1,50 +1,64 @@
 # EDA Global Terrorism Analysis
 
-Project Summary: The Global Terrorism Database (GTD) is a publicly available database that provides details about acts of terrorism worldwide spanning from 1970 to 2017. It offers comprehensive data on both domestic and international terrorist incidents that have taken place during this duration, encompassing over 180,000 attacks. The database is managed by a team of researchers at the National Consortium for the Study of Terrorism and Responses to Terrorism (START), which is based at the University of Maryland. Engage with the data to uncover significant insights related to terrorist activities.
+# Project Summary: 
+The Global Terrorism Database (GTD) is a publicly available database that provides details about acts of terrorism worldwide spanning from 1970 to 2017. It offers comprehensive data on both domestic and international terrorist incidents that have taken place during this duration, encompassing over 180,000 attacks. The database is managed by a team of researchers at the National Consortium for the Study of Terrorism and Responses to Terrorism (START), which is based at the University of Maryland. Engage with the data to uncover significant insights related to terrorist activities.
 
-Problem Statement: Try to identify the terrorist hotspots as a security/defense analyst. What security issues and insights can EDA provide?
+# Problem Statement: 
+Try to identify the terrorist hotspots as a security/defense analyst. What security issues and insights can EDA provide?
 
-Import Libraries: This section imports the necessary libraries for data manipulation, visualization, and model training. The imported libraries include:
+# Import Libraries:
+This section imports the necessary libraries for data manipulation, visualization, and model training. The imported libraries include:
 - `pandas`: Used for data manipulation and aggregation.
 - `numpy`: Used for computationally efficient operations.
 - `matplotlib.pyplot` and `seaborn`: Used for data visualization.
 
-Dataset Loading :	load a data set from a Google Drive location using Google Colab. It mounts Google Drive and then reads the CSV file named "Global Terrorism Data.csv
+# Dataset Loading :
+load a data set from a Google Drive location using Google Colab. It mounts Google Drive and then reads the CSV file named "Global Terrorism Data.csv
 ” using pd.read_csv() from the pandas library.
- .head is used to display the topmost rows.
+
+.head is used to display the topmost rows.
+
 Data.shape is used to display the no of rows and col.The dataset contains 181691 rows and 135 columns.
-Dataset Information: data.info() provides a summary of the DataFrame, including the number of non-null values and data types of each column. It gives an overview of the data structure and helps in identifying missing or inconsistent data.
-Missing Values/Null Values: The table shows the number of missing values (null values) in each column of the dataset. We can see 
+
+# Dataset Information: 
+data.info() provides a summary of the DataFrame, including the number of non-null values and data types of each column. It gives an overview of the data structure and helps in identifying missing or inconsistent data.
+
+# Missing Values/Null Values:
+The table shows the number of missing values (null values) in each column of the dataset. We can see 
 
 Visualizing the missing values : it creates a heatmap visualization of missing values.The missing values are represented by a distinct color, allowing to identify the presence of missing values in the dataset visually.
-What did you know about your dataset?
+
+# What did you know about your dataset?
 The dataset provided is managed by researchers from the National Consortium for the Study of Terrorism and Responses to Terrorism (START), located at the University of Maryland. The objective is to comprehend and implement measures to mitigate the continued propagation of terrorism and promote peace.
 Our dataset consists of 181691 rows and 135 columns. The data encompasses a total of 135 columns, encompassing both numerical and textual information. There are instances of missing values within our dataset.
-Understanding Variable name
+
+# Understanding Variable name
 Data.columns display the coln name
 data.describe(include='all') it is a describe method which is used to generate descriptive statistics of the data within the DataFrame.
 For numerical columns, additional statistics are provided, such as mean, std (standard deviation), min, 25%, 50% (median), 75%, and max.
 For categorical columns, only the count, unique, top, and freq values are displayed.
-Check Unique Values for each variable.
+
+# Check Unique Values for each variable.
 This loop will iterate over each column in data.columns.tolist() and print a statement indicating the number of unique values in that column.
 Data Wrangling: This section focuses on several data transformations and preparations are performed to make the dataset analysis-ready
 Using the rename function and a dictionary, rename the column name.
 I chose only a few columns that will be useful for our analysis.
-What all manipulations have you done and insights you found?
+
+# What all manipulations have you done and insights you found?
 To ensure better comprehension of terminologies, I initially renamed the variables relevant for analysis. Subsequently, I filtered the dataset, retaining only those variables necessary for further analysis. As a result, I obtained a curated dataframe with a shape of (181691, 16). The data reveals the presence of missing values in certain variables such as state, city, latitude, longitude, killed, wounded, and target.
 To address this, I first removed the missing values from the state, city, latitude, longitude, and target variables. Then, for the variables killed and wounded, I replaced the missing values with the respective column averages. By applying these actions, we successfully eliminated all missing values in our dataset. Consequently, we now have a clean dataframe ready for data analysis, featuring a shape of (175708, 16).
 With the removal of all NaN values, we can proceed with insightful plot visualizations to analyze the data.
 
+# Data Vizualization
+# Chart - 1 : 
 
-
-
-Data Vizualization
-Chart - 1 : 
 Why this chart
 An area plot visually represents quantitative data.And aided me in analysing terrorist activities by region and year.
+
 insights
 The frequency of terrorist activities has experienced a significant surge since 2010 worldwide. 
 The regions of the Middle East and North Africa have consistently been the site of major attacks over the years.
+
 business impact
 Positive Impact of Insights = Data analysis can enhance the strategic deployment of peacekeeping forces.
  Negative Impact of Insights = Data analysis has the potential to hinder business activities in impacted regions.
